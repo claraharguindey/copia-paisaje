@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background: #ffffff;
+    color: #000000;
+    padding: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #000000;
+}
+
+h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+button {
+    background: #ffffff;
+    border: 1px solid #000000;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #000000;
+}
+
+button:hover {
+    background: #eeeeee;
+}
+
+button.active {
+    background: #000000;
+    color: #ffffff;
+}
+
+.canvas-container {
+    position: relative;
+    width: 100%;
+    border: 1px solid #000000;
+    margin-bottom: 12px;
+    background: #ffffff;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+canvas.draw-mode {
+    cursor: crosshair;
+}
+
+#overlayCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    border: 1px solid #000000;
+    padding: 12px;
+}
+
+.control-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.85rem;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type=range], select {
+    width: 100%;
+}
+
+select {
+    padding: 4px;
+    border: 1px solid #000000;
+    background: #ffffff;
+}
+
+.hidden {
+    display: none;
+}

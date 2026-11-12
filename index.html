@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paisaje</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>copiar el paisaje</h1>
+    </header>
+
+    <div class="toolbar">
+        <input type="file" id="fileInput" accept="image/*" class="hidden" onchange="handleFileUpload(event)">
+        <button onclick="document.getElementById('fileInput').click()">Subir imagen</button>
+        <button id="drawBtn" onclick="toggleDrawMode()">Añadir puntos</button>
+        <button onclick="clearCanvas()">Limpiar</button>
+        <button id="playBtn" onclick="togglePlay()">Reproducir</button>
+        <button onclick="stopScan()">Reiniciar</button>
+    </div>
+
+    <div class="canvas-container">
+        <canvas id="sourceCanvas" width="800" height="450"></canvas>
+        <canvas id="overlayCanvas" width="800" height="450"></canvas>
+    </div>
+
+    <div class="controls">
+        <div class="control-item">
+            <label for="bpmSlider">Velocidad: <span id="bpmVal">120</span> BPM</label>
+            <input type="range" id="bpmSlider" min="40" max="240" value="120" oninput="updateBPM(this.value)">
+        </div>
+
+        <div class="control-item">
+            <label for="scaleSelect">Escala musical</label>
+            <select id="scaleSelect">
+                <option value="pentatonic">Pentatónica Mayor</option>
+                <option value="minor">Pentatónica Menor</option>
+                <option value="major">Escala Mayor</option>
+            </select>
+        </div>
+
+        <div class="control-item">
+            <label for="sensSlider">Sensibilidad óptica</label>
+            <input type="range" id="sensSlider" min="20" max="220" value="120" oninput="analyzeImagePoints()">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
